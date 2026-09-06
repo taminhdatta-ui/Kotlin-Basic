@@ -21,16 +21,16 @@ Các bài tập Kotlin cơ bản trong quá trình học.
    How to Run Kotlin Program in Visual Studio Code | Install and Setup Kotlin in VS Code Tutorial
    ==> https://www.youtube.com/watch?v=AbjdtTYca64
    ( Nếu sau B1 của bạn bị FAIL thì tiếp tục follow B2)
-      
+   
    B2: Truy cập https://gradle.org/releases/#9.7.1
    Click vào binary- only( phiên bản mới nhất)
    Edit enviroment variable
 
    2. Cách tải dự án về máy local để chạy
-      B1: Copy đường dẫn 
-      https://github.com/taminhdatta-ui/Kotlin-Basic.git
-      B2: Mở git bash
-      git clone https://github.com/taminhdatta-ui/Kotlin-Basic.git
-      Click programming bạn muốn chọn và chạy nó trên VSCode
+   B1: Copy đường dẫn 
+   https://github.com/taminhdatta-ui/Kotlin-Basic.git
+   B2: Mở git bash
+   git clone https://github.com/taminhdatta-ui/Kotlin-Basic.git
+   Click programming bạn muốn chọn và chạy nó trên VSCode
 
 CHÚC BẠN THÀNH CÔNG !!!
