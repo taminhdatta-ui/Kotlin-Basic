@@ -11,7 +11,7 @@ data class Score(
     val database: Double
 )
 
-fun inputScore(): Score {
+fun inputScore(): Score{
     print("Math: ")
     val math = readln().toDouble()
 
@@ -24,7 +24,7 @@ fun inputScore(): Score {
     return Score(math, programming, database)
 }
 
-fun sum(score: Score): Double {
+fun sum(score: Score): Double{
     return score.math + score.programming + score.database
 }
 
@@ -32,7 +32,7 @@ fun average(score: Score): Double{
     return sum(score) / 3
 }
 
-fun maxScore(score: Score): Double {
+fun maxScore(score: Score): Double{
     return maxOf(score.math, score.programming, score.database)
 }
 
@@ -43,7 +43,7 @@ fun checkGPA(avg: Double){
         println("4. GPA: FAIL")
 }
 
-fun displayResult(score: Score) {
+fun displayResult(score: Score){
     val total = sum(score)
     val avg = average(score)
     val max = maxScore(score)
