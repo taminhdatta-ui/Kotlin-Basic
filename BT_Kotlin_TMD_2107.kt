@@ -1,9 +1,10 @@
-const val PASSING_SCORE = 5.0
 
 fun printDeveloperInfo(){
     println("Tac gia: Ta Minh Dat" )
     println("Ma sinh vien: 2415.053.122.107" ); println()
 }
+
+const val PASSING_SCORE = 5.0
 
 data class Score(
     val math: Double,
