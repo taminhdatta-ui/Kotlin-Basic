@@ -42,6 +42,7 @@ fun displayResult(){
 }
 
 fun main(){
+    println("Chuong trinh thuc hien cac bai tap ve vong lap")
     displayResult()
     printDeveloperInfo()
 }
