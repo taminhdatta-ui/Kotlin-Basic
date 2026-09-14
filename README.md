@@ -6,6 +6,7 @@ Các bài tập Kotlin cơ bản trong quá trình học.
 
 1. **BT_Kotlin_TMD_2107.kt**: chương trình tính điểm GPA cho sinh viên IT.
 2. **BT_VongLap_TMD_2107.kt**: ứng dụng của for và while.
+3. **BT_QLSV_TMD_2107.kt**: chương trình quản lý sinh viên
 
 # 🛠️ Công nghệ
 
