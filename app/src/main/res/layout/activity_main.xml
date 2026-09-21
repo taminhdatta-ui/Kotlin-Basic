@@ -59,6 +59,18 @@
                 android:hint="Nhập GPA mới (0.0 - 4.0)"
                 android:inputType="numberDecimal"
                 android:textColor="#FFFFFF" />
+            <TextView
+                android:id="@+id/tvPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Số điện thoại: 0862966579"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/btnCall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gọi điện" />
 
             <Button
                 android:id="@+id/btnUpdateGpa"
@@ -67,6 +79,11 @@
                 android:layout_marginTop="12dp"
                 android:backgroundTint="#34B469"
                 android:text="Cập Nhật Thông Tin" />
+            <Button
+                android:id="@+id/btnDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Xóa hồ sơ" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </LinearLayout>
