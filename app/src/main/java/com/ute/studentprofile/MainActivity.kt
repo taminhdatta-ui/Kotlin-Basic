@@ -48,10 +48,15 @@ class MainActivity : AppCompatActivity() {
         val btnCall = findViewById<Button>(R.id.btnCall)
 
         btnCall.setOnClickListener {
-            val phoneNumber = "0912345678"
+            val phoneNumber = "086.2966.579"
             val intent = Intent(Intent.ACTION_DIAL)
             intent.data = Uri.parse("tel:$phoneNumber")
             startActivity(intent)
+        }
+        val btnDelete = findViewById<Button>(R.id.btnDelete)
+
+        btnDelete.setOnClickListener {
+            showConfirmDialog()
         }
     }
 
