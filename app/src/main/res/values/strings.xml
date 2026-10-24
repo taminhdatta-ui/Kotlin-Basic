@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Quản lý sinh viên</string>
+    <string name="title_registration">ĐĂNG KÝ THÔNG TIN</string>
+    <string name="hint_fullname">Họ và tên</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_phone">Số điện thoại</string>
+    <string name="hint_student_id">Mã sinh viên (MSV)</string>
+    <string name="hint_class">Lớp</string>
+    <string name="btn_register">ĐĂNG KÝ</string>
+    <string name="btn_detail">XEM TRANG CHI TIẾT →</string>
+    <string name="title_detail">THÔNG TIN CHI TIẾT</string>
+    <string name="label_fullname">Họ và tên:</string>
+    <string name="label_email">Email:</string>
+    <string name="label_phone">Số điện thoại:</string>
+    <string name="label_student_id">Mã sinh viên (MSV):</string>
+    <string name="label_class">Lớp:</string>
+    <string name="btn_back">← QUAY LẠI ĐĂNG KÝ</string>
+</resources>

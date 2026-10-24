@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/dark_background"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="24dp">
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_registration"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="32dp"
+            android:letterSpacing="0.05" />
+
+        <!-- Họ và tên -->
+        <EditText
+            android:id="@+id/etFullName"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_rounded_input"
+            android:hint="@string/hint_fullname"
+            android:textColor="@color/input_text_color"
+            android:textColorHint="@color/input_hint_color"
+            android:inputType="textPersonName"
+            android:paddingHorizontal="16dp"
+            android:textSize="16sp"
+            android:layout_marginBottom="16dp"
+            android:autofillHints="name" />
+
+        <!-- Email -->
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_rounded_input"
+            android:hint="@string/hint_email"
+            android:textColor="@color/input_text_color"
+            android:textColorHint="@color/input_hint_color"
+            android:inputType="textEmailAddress"
+            android:paddingHorizontal="16dp"
+            android:textSize="16sp"
+            android:layout_marginBottom="16dp"
+            android:autofillHints="emailAddress" />
+
+        <!-- Số điện thoại -->
+        <EditText
+            android:id="@+id/etPhone"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_rounded_input"
+            android:hint="@string/hint_phone"
+            android:textColor="@color/input_text_color"
+            android:textColorHint="@color/input_hint_color"
+            android:inputType="phone"
+            android:paddingHorizontal="16dp"
+            android:textSize="16sp"
+            android:layout_marginBottom="16dp"
+            android:autofillHints="phone" />
+
+        <!-- Mã sinh viên (MSV) -->
+        <EditText
+            android:id="@+id/etStudentId"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_rounded_input"
+            android:hint="@string/hint_student_id"
+            android:textColor="@color/input_text_color"
+            android:textColorHint="@color/input_hint_color"
+            android:inputType="text"
+            android:paddingHorizontal="16dp"
+            android:textSize="16sp"
+            android:layout_marginBottom="16dp"
+            android:autofillHints="username" />
+
+        <!-- Lớp -->
+        <EditText
+            android:id="@+id/etClass"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_rounded_input"
+            android:hint="@string/hint_class"
+            android:textColor="@color/input_text_color"
+            android:textColorHint="@color/input_hint_color"
+            android:inputType="text"
+            android:paddingHorizontal="16dp"
+            android:textSize="16sp"
+            android:layout_marginBottom="24dp"
+            android:autofillHints="postalAddress" />
+
+        <!-- Nút Đăng Ký -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnRegister"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:background="@drawable/bg_green_button"
+            android:text="@string/btn_register"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Nút Xem Trang Chi Tiết -->
+        <TextView
+            android:id="@+id/tvDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_detail"
+            android:textColor="@color/btn_green"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:padding="8dp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true" />
+
+    </LinearLayout>
+</ScrollView>
