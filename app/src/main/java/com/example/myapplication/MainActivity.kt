@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.widget.doAfterTextChanged
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,6 +21,13 @@ class MainActivity : AppCompatActivity() {
     private lateinit var etClass: EditText
     private lateinit var btnRegister: AppCompatButton
     private lateinit var tvDetail: TextView
+
+    // Cờ theo dõi trạng thái tương tác của từng trường
+    private var isFullNameTouched = false
+    private var isEmailTouched = false
+    private var isPhoneTouched = false
+    private var isStudentIdTouched = false
+    private var isClassTouched = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,19 +56,160 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupListeners() {
+        // Real-time validation bằng doAfterTextChanged
+        etFullName.doAfterTextChanged {
+            isFullNameTouched = true
+            validateFullName()
+        }
+        etEmail.doAfterTextChanged {
+            isEmailTouched = true
+            validateEmail()
+        }
+        etPhone.doAfterTextChanged {
+            isPhoneTouched = true
+            validatePhone()
+        }
+        etStudentId.doAfterTextChanged {
+            isStudentIdTouched = true
+            validateStudentId()
+        }
+        etClass.doAfterTextChanged {
+            isClassTouched = true
+            validateClass()
+        }
+
         // Nút Đăng ký
         btnRegister.setOnClickListener {
-            if (validateInputs()) {
+            if (validateAll()) {
                 navigateToDetail()
             }
         }
 
         // Nút Xem trang chi tiết
         tvDetail.setOnClickListener {
-            if (validateInputs()) {
+            if (validateAll()) {
                 navigateToDetail()
             }
         }
+    }
+
+    private fun validateFullName(): Boolean {
+        val text = etFullName.text.toString().trim()
+        if (text.isEmpty()) {
+            if (isFullNameTouched) {
+                etFullName.error = "Họ và tên không được để trống"
+            } else {
+                etFullName.error = null
+            }
+            return false
+        }
+        etFullName.error = null
+        return true
+    }
+
+    private fun validateEmail(): Boolean {
+        val text = etEmail.text.toString().trim()
+        if (text.isEmpty()) {
+            if (isEmailTouched) {
+                etEmail.error = "Email không được để trống"
+            } else {
+                etEmail.error = null
+            }
+            return false
+        }
+        if (!Patterns.EMAIL_ADDRESS.matcher(text).matches()) {
+            if (isEmailTouched) {
+                etEmail.error = "Email không đúng định dạng (VD: example@gmail.com)"
+            }
+            return false
+        }
+        etEmail.error = null
+        return true
+    }
+
+    private fun validatePhone(): Boolean {
+        val text = etPhone.text.toString().trim()
+        val phoneRegex = "^0\\d{9}$".toRegex()
+        if (text.isEmpty()) {
+            if (isPhoneTouched) {
+                etPhone.error = "Số điện thoại không được để trống"
+            } else {
+                etPhone.error = null
+            }
+            return false
+        }
+        if (!text.matches(phoneRegex)) {
+            if (isPhoneTouched) {
+                etPhone.error = "Số điện thoại phải gồm 10 chữ số và bắt đầu bằng số 0"
+            }
+            return false
+        }
+        etPhone.error = null
+        return true
+    }
+
+    private fun validateStudentId(): Boolean {
+        val text = etStudentId.text.toString().trim()
+        if (text.isEmpty()) {
+            if (isStudentIdTouched) {
+                etStudentId.error = "Mã sinh viên không được để trống"
+            } else {
+                etStudentId.error = null
+            }
+            return false
+        }
+        etStudentId.error = null
+        return true
+    }
+
+    private fun validateClass(): Boolean {
+        val text = etClass.text.toString().trim()
+        if (text.isEmpty()) {
+            if (isClassTouched) {
+                etClass.error = "Lớp không được để trống"
+            } else {
+                etClass.error = null
+            }
+            return false
+        }
+        etClass.error = null
+        return true
+    }
+
+    private fun validateAll(): Boolean {
+        // Đánh dấu tất cả đã được tương tác khi bấm Đăng ký
+        isFullNameTouched = true
+        isEmailTouched = true
+        isPhoneTouched = true
+        isStudentIdTouched = true
+        isClassTouched = true
+
+        val v1 = validateFullName()
+        if (!v1) {
+            etFullName.requestFocus()
+            return false
+        }
+        val v2 = validateEmail()
+        if (!v2) {
+            etEmail.requestFocus()
+            return false
+        }
+        val v3 = validatePhone()
+        if (!v3) {
+            etPhone.requestFocus()
+            return false
+        }
+        val v4 = validateStudentId()
+        if (!v4) {
+            etStudentId.requestFocus()
+            return false
+        }
+        val v5 = validateClass()
+        if (!v5) {
+            etClass.requestFocus()
+            return false
+        }
+        return true
     }
 
     private fun navigateToDetail() {
@@ -72,61 +221,5 @@ class MainActivity : AppCompatActivity() {
             putExtra("EXTRA_CLASS", etClass.text.toString().trim())
         }
         startActivity(intent)
-    }
-
-    private fun validateInputs(): Boolean {
-        val fullName = etFullName.text.toString().trim()
-        val email = etEmail.text.toString().trim()
-        val phone = etPhone.text.toString().trim()
-        val studentId = etStudentId.text.toString().trim()
-        val className = etClass.text.toString().trim()
-
-        // 1. Kiểm tra Họ và tên
-        if (fullName.isEmpty()) {
-            etFullName.error = "Họ và tên không được để trống"
-            etFullName.requestFocus()
-            return false
-        }
-
-        // 2. Kiểm tra Email
-        if (email.isEmpty()) {
-            etEmail.error = "Email không được để trống"
-            etEmail.requestFocus()
-            return false
-        }
-        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            etEmail.error = "Email không đúng định dạng (VD: example@gmail.com)"
-            etEmail.requestFocus()
-            return false
-        }
-
-        // 3. Kiểm tra Số điện thoại (10 chữ số, bắt đầu bằng số 0)
-        val phoneRegex = "^0\\d{9}$".toRegex()
-        if (phone.isEmpty()) {
-            etPhone.error = "Số điện thoại không được để trống"
-            etPhone.requestFocus()
-            return false
-        }
-        if (!phone.matches(phoneRegex)) {
-            etPhone.error = "Số điện thoại phải gồm 10 chữ số và bắt đầu bằng số 0"
-            etPhone.requestFocus()
-            return false
-        }
-
-        // 4. Kiểm tra Mã sinh viên (MSV)
-        if (studentId.isEmpty()) {
-            etStudentId.error = "Mã sinh viên không được để trống"
-            etStudentId.requestFocus()
-            return false
-        }
-
-        // 5. Kiểm tra Lớp
-        if (className.isEmpty()) {
-            etClass.error = "Lớp không được để trống"
-            etClass.requestFocus()
-            return false
-        }
-
-        return true
     }
 }
