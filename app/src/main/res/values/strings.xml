@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Quản lý sinh viên</string>
     <string name="title_registration">ĐĂNG KÝ THÔNG TIN</string>
+    <string name="subtitle_registration">Điền thông tin sinh viên để tiếp tục</string>
     <string name="hint_fullname">Họ và tên</string>
     <string name="hint_email">Email</string>
     <string name="hint_phone">Số điện thoại</string>

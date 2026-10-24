@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    android:background="@color/dark_background"
+    android:background="@drawable/bg_app_gradient"
     tools:context=".DetailActivity">
 
     <LinearLayout
@@ -21,19 +21,19 @@
             android:layout_height="wrap_content"
             android:text="@string/title_detail"
             android:textColor="@color/white"
-            android:textSize="22sp"
+            android:textSize="26sp"
             android:textStyle="bold"
-            android:layout_marginTop="32dp"
-            android:layout_marginBottom="32dp"
-            android:letterSpacing="0.05" />
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
+            android:letterSpacing="0.03" />
 
         <!-- Card Container for details -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="@drawable/bg_rounded_input"
-            android:padding="20dp"
+            android:background="@drawable/bg_glass_card"
+            android:padding="24dp"
             android:layout_marginBottom="24dp">
 
             <!-- Họ tên -->
@@ -42,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/label_fullname"
                 android:textColor="@color/input_hint_color"
-                android:textSize="14sp"
+                android:textSize="13sp"
                 android:layout_marginBottom="4dp" />
             <TextView
                 android:id="@+id/tvFullName"
@@ -60,7 +60,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/label_email"
                 android:textColor="@color/input_hint_color"
-                android:textSize="14sp"
+                android:textSize="13sp"
                 android:layout_marginBottom="4dp" />
             <TextView
                 android:id="@+id/tvEmail"
@@ -78,7 +78,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/label_phone"
                 android:textColor="@color/input_hint_color"
-                android:textSize="14sp"
+                android:textSize="13sp"
                 android:layout_marginBottom="4dp" />
             <TextView
                 android:id="@+id/tvPhone"
@@ -96,7 +96,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/label_student_id"
                 android:textColor="@color/input_hint_color"
-                android:textSize="14sp"
+                android:textSize="13sp"
                 android:layout_marginBottom="4dp" />
             <TextView
                 android:id="@+id/tvStudentId"
@@ -114,7 +114,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/label_class"
                 android:textColor="@color/input_hint_color"
-                android:textSize="14sp"
+                android:textSize="13sp"
                 android:layout_marginBottom="4dp" />
             <TextView
                 android:id="@+id/tvClass"
@@ -131,8 +131,8 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnBack"
             android:layout_width="match_parent"
-            android:layout_height="52dp"
-            android:background="@drawable/bg_green_button"
+            android:layout_height="54dp"
+            android:background="@drawable/bg_glass_button"
             android:text="@string/btn_back"
             android:textColor="@color/white"
             android:textSize="16sp"
