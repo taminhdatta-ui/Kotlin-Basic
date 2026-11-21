@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Quản Lý Sinh Viên</string>
+    <string name="toolbar_title">Danh Sách Sinh Viên</string>
+    <string name="action_sync">Đồng bộ Cloud</string>
+    <string name="add_student">Thêm sinh viên</string>
+    <string name="delete_student">Xóa sinh viên</string>
+    <string name="empty_message">Chưa có sinh viên nào.\nBấm nút + để thêm mới.</string>
+    <string name="hint_full_name">Họ và tên</string>
+    <string name="hint_student_code">Mã số sinh viên (MSSV)</string>
+    <string name="hint_email">Email (không bắt buộc)</string>
+    <string name="hint_gpa">Điểm GPA (0 - 4)</string>
+</resources>
